@@ -1,28 +1,37 @@
----
-title: Discord TypeScript bot
-description: A Discord bot written in TypeScript
-tags:
-  - discord.js
-  - typescript
----
+# LeggoMyYaigo
 
-# Discord.js Example
+To start this bot from scratch, you'll need to:
 
-This example starts a Discord bot using [discord.js](https://discord.js.org) and [TypeScript](https://www.typescriptlang.org/).
+1. register some number of commands with the YAIG Discord server
+1. start the bot so that it can process commands
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new?template=https%3A%2F%2Fgithub.com%2Frailwayapp%2Fexamples%2Ftree%2Fmaster%2Fexamples%2Fdiscordjs-typescript&envs=DISCORD_TOKEN&DISCORD_TOKENDesc=Token+of+your+Discord+bot)
+This README covers how to do both of these things.
 
-## ✨ Features
+## 0. Prerequisites
 
-- Discord.js
-- TypeScript
+```sh
+yarn install
+```
 
-## 💁‍♀️ How to use
+-   Get the Discord token from @casado or @hausdorff, then put it into your
+    shell environment, _e.g._,
 
-- Install dependencies `yarn`
-- Connect to your Railway project `railway link`
-- Start the bot `railway run yarn dev`
+```sh
+export DISCORD_TOKEN=<token>
+```
 
-## 📝 Notes
+## 1. Register commands with YAIG Discord server
 
-The server started launches a Discord bot with a couple of basic commands. The code is located at `src/index.ts`.
+```sh
+yarn build
+DISCORD_TOKEN=<token> yarn run register-commands-with-server
+```
+
+## 2. Running server locally
+
+```sh
+DISCORD_TOKEN=<token> yarn run dev
+```
+
+Once running, you can do something like `/dump <channel-id>`. Discord will route
+that request to this running bot, which will respond.
