@@ -11,6 +11,7 @@ This README covers how to do both of these things.
 
 ```sh
 yarn install
+yarn build
 ```
 
 -   Get the Discord token from @casado or @hausdorff, then put it into your
@@ -18,19 +19,19 @@ yarn install
 
 ```sh
 export DISCORD_TOKEN=<token>
+export CONVEX_ADMIN_KEY=<token>
 ```
 
 ## 1. Register commands with YAIG Discord server
 
 ```sh
-yarn build
 DISCORD_TOKEN=<token> yarn run register-commands-with-server
 ```
 
 ## 2. Running server locally
 
 ```sh
-DISCORD_TOKEN=<token> yarn run dev
+DISCORD_TOKEN=<token> CONVEX_ADMIN_KEY=<token> yarn run dev
 ```
 
 Once running, you can do something like `/dump <channel-id>`. Discord will route
